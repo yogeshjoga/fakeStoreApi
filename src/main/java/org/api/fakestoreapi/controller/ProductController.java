@@ -13,10 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -74,6 +71,19 @@ public class ProductController {
     }
 
 
+    /**
+     * Retrieves a list of all products from the product service.
+     *
+     * This method interacts with the product service to fetch all available products
+     * and returns them as a ResponseEntity containing a list of Product objects. If no
+     * products are found, a ThirdPartyAPIException is thrown.
+     *
+     * @return A ResponseEntity containing a list of Product objects wrapped with appropriate
+     *         headers and an HTTP status of OK if products are successfully retrieved.
+     *         Throws ThirdPartyAPIException if no products are found.
+     * @throws ThirdPartyAPIException If there is an error while fetching products from the service
+     *                                or if no products are found.
+     */
     @GetMapping("/all_products")
     public ResponseEntity<List<Product>> getAllProducts() throws ThirdPartyAPIException {
         headers = new LinkedMultiValueMap<>();
@@ -83,6 +93,23 @@ public class ProductController {
            throw  new ThirdPartyAPIException("No Products Found");
        }
        return new ResponseEntity<>(products,headers, HttpStatus.OK);
+    }
+
+    /**
+     * Handles the creation of a new product.
+     *
+     * This method receives a product DTO, processes it using the product service,
+     * and returns the created product information wrapped in a ResponseEntity with an HTTP status of OK.
+     *
+     * @param dto The FSA_RequestProductDTO object containing the product details to be created.
+     * @return A ResponseEntity containing the created FSA_RequestProductDTO object and an HTTP status of OK.
+     * @throws ThirdPartyAPIException If there is an error while interacting with the third-party API.
+     */
+    @PostMapping("/create_product")
+    public ResponseEntity<FSA_RequestProductDTO> postProduct(@RequestBody FSA_RequestProductDTO dto) throws ThirdPartyAPIException {
+        FSA_RequestProductDTO response = productService.postProduct(dto);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+        // minor bug is there try to find our and fix it later @author yogesh joga
     }
 
 

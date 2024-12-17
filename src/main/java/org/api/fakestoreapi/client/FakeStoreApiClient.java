@@ -87,4 +87,17 @@ public class FakeStoreApiClient {
     }
 
 
+    /**
+     * Sends a POST request to create a new product in the Fake Store API.
+     *
+     * @param dto An instance of FSA_RequestProductDTO containing the product details to be created.
+     * @return An instance of FSA_RequestProductDTO containing the created product details after validation.
+     */
+    public FSA_RequestProductDTO postProduct(FSA_RequestProductDTO dto){
+        ResponseEntity<FSA_RequestProductDTO> responseEntity = requestForEntity("https://fakestoreapi.com/products",HttpMethod.POST,dto,FSA_RequestProductDTO.class);
+        return dtoValidator(responseEntity);
+    }
+
+
+
 }

@@ -60,5 +60,10 @@ public class ProductService implements IProductService {
         return mappers.FSADTOToProductGetAll(dto);
     }
 
+    @Override
+    public FSA_RequestProductDTO postProduct(FSA_RequestProductDTO dto) throws ThirdPartyAPIException {
+         return fakeStoreApiClient.postProduct(dto);
+    }
+
 
 }
