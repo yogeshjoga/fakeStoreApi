@@ -14,6 +14,9 @@ import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * A client class responsible for interacting with the Fake Store API.
  * Provides methods for retrieving product data and validating responses.
@@ -62,6 +65,25 @@ public class FakeStoreApiClient {
             throw new ThirdPartyAPIException("Your Business API not Working Please try Again Thank you!");
         }
         return dtoValidator(responseEntity);
+    }
+
+
+    /**
+     * Retrieves a list of all products from the Fake Store API.
+     *
+     * This method sends an HTTP GET request to the Fake Store API and retrieves
+     * all available products. If the API response is null or does not contain
+     * a valid body, a ThirdPartyAPIException is thrown.
+     *
+     * @return A list of FSA_RequestProductDTO objects representing the product details.
+     * @throws ThirdPartyAPIException If an error occurs*/
+
+    public List<FSA_RequestProductDTO> getAllProducts() throws ThirdPartyAPIException {
+        ResponseEntity<FSA_RequestProductDTO[]> responseEntity = requestForEntity( "https://fakestoreapi.com/products", HttpMethod.GET, null, FSA_RequestProductDTO[].class );
+        if (responseEntity == null || responseEntity.getBody() == null) {
+            throw new ThirdPartyAPIException("Your Business API is not working. Please try again. Thank you!");
+        }
+        return Arrays.asList(responseEntity.getBody());
     }
 
 

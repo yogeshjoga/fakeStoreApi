@@ -4,6 +4,8 @@ package org.api.fakestoreapi.service;
 import org.api.fakestoreapi.exception.ThirdPartyAPIException;
 import org.api.fakestoreapi.model.Product;
 
+import java.util.List;
+
 /**
  * Defines the contract for product-related operations.
  *
@@ -14,4 +16,5 @@ import org.api.fakestoreapi.model.Product;
  */
 public interface IProductService {
     public Product getProductById(Long id) throws ThirdPartyAPIException;
+    public List<Product> getAllProducts() throws ThirdPartyAPIException;
 }
