@@ -5,6 +5,9 @@ import org.api.fakestoreapi.exception.ThirdPartyAPIException;
 import org.api.fakestoreapi.model.Product;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author yogeshjoga
  * The Mappers class provides utility methods to convert between Product and FSA_RequestProductDTO objects.
@@ -45,6 +48,20 @@ public class Mappers {
         product.setProductDescription(dto.getDescription());
         product.setProductPrice(dto.getPrice());
         return product;
+    }
+
+    /**
+     * Converts a list of FSA_RequestProductDTO objects to a list of Product instances by mapping relevant fields.
+     *
+     * @param dto the list of FSA_RequestProductDTO objects to be converted; must not be null
+     * @return a list of Product instances populated with data from the provided list of FSA_RequestProductDTO objects
+     */
+    public List<Product>  FSADTOToProductGetAll(List<FSA_RequestProductDTO> dto){
+        List<Product> products = new ArrayList<>();
+        for(FSA_RequestProductDTO productDTO : dto){
+            products.add(FSADTOToProduct(productDTO));
+        }
+        return products;
     }
 
 }

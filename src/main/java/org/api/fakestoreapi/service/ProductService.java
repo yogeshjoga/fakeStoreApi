@@ -9,6 +9,8 @@ import org.api.fakestoreapi.utils.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 /**
  * Service class that implements product-related operations by communicating with
@@ -41,6 +43,21 @@ public class ProductService implements IProductService {
     public Product getProductById(Long id) throws ThirdPartyAPIException {
         FSA_RequestProductDTO dto = fakeStoreApiClient.getProductById(id);
         return mappers.FSADTOToProduct(dto);
+    }
+
+
+    /**
+     * Retrieves a list of all products by communicating with a third-party API and
+     * converting the response into a list of Product objects.
+     *
+     * @return A list of Product objects containing details of all available products.
+     * @throws ThirdPartyAPIException If an error occurs while fetching the product data
+     *         from the third-party API.
+     */
+    @Override
+    public List<Product> getAllProducts() throws ThirdPartyAPIException {
+        List<FSA_RequestProductDTO> dto = fakeStoreApiClient.getAllProducts();
+        return mappers.FSADTOToProductGetAll(dto);
     }
 
 

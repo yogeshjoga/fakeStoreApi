@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author yogeshjoga
@@ -39,7 +40,7 @@ public class ProductController {
     @Autowired
     private Mappers mappers;
 
-    MultiValueMap<String, LocalDateTime> headers;
+    MultiValueMap<String, String> headers;
 
 
     /**
@@ -70,6 +71,18 @@ public class ProductController {
             throw exception;
         }
         return null;
+    }
+
+
+    @GetMapping("/all_products")
+    public ResponseEntity<List<Product>> getAllProducts() throws ThirdPartyAPIException {
+        headers = new LinkedMultiValueMap<>();
+       List<Product> products = productService.getAllProducts();
+       headers.add("Date", LocalDateTime.now().toString());
+       if(products == null){
+           throw  new ThirdPartyAPIException("No Products Found");
+       }
+       return new ResponseEntity<>(products,headers, HttpStatus.OK);
     }
 
 
