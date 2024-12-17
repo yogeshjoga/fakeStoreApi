@@ -14,6 +14,14 @@ import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * A client class responsible for interacting with the Fake Store API.
+ * Provides methods for retrieving product data and validating responses.
+ *
+ * This class uses RestTemplate to perform HTTP requests and handles
+ * API responses for further processing. It also performs validation
+ * of DTO responses to ensure compliance with the expected data model.
+ */
 @Component
 public class FakeStoreApiClient {
 
