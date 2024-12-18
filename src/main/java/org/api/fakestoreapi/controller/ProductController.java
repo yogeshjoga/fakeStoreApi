@@ -124,5 +124,11 @@ public class ProductController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
+    @GetMapping("/products_by_limit_and_offset")
+    public ResponseEntity<List<Product>> getProductsByLimitAndOffset(@RequestParam("limit") Long limit,@RequestParam("offset") Long offset){
+        List<Product> products = productService.getProductsByLimitAndOffset(limit);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
 
 }

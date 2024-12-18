@@ -115,6 +115,11 @@ public class FakeStoreApiClient {
     }
 
 
+    public List<FSA_RequestProductDTO> getProductsByLimitAndOffset(Long limit){
+        ResponseEntity<FSA_RequestProductDTO[]> responseEntity = requestForEntity("https://fakestoreapi.com/products?limit={limit}",HttpMethod.GET,null,FSA_RequestProductDTO[].class,limit);
+        return Arrays.asList(responseEntity.getBody());
+    }
+
 
 
 
