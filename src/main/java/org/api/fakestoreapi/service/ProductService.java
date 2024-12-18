@@ -65,5 +65,19 @@ public class ProductService implements IProductService {
          return fakeStoreApiClient.postProduct(dto);
     }
 
+    /**
+     * Retrieves a subset of products based on a specified limit by communicating with
+     * a third-party API and converting the response into a list of Product objects.
+     *
+     * @param limit The maximum number of products to fetch; must not be null.
+     * @return A list of Product objects representing the subset of products retrieved.
+     */
+
+    @Override
+    public List<Product> getProductsByLimit(Long limit) {
+        List<FSA_RequestProductDTO> dto = fakeStoreApiClient.getProductsByLimit(limit);
+        return mappers.FSADTOToProductGetAll(dto);
+    }
+
 
 }
