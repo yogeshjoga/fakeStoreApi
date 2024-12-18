@@ -1,0 +1,22 @@
+2024-12-19 02:46:33,337 : org.api.fakestoreapi.FakeStoreApiApplication : INFO --> Starting FakeStoreApiApplication using Java 23.0.1 with PID 16080 (D:\Github_projects\fakeStoreApi\target\classes started by yogeshjoga in D:\Github_projects\fakeStoreApi) : logStarting : 
+2024-12-19 02:46:33,339 : org.api.fakestoreapi.FakeStoreApiApplication : INFO --> No active profile set, falling back to 1 default profile: "default" : logStartupProfileInfo : 
+2024-12-19 02:46:33,366 : org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor : INFO --> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable : logTo : 
+2024-12-19 02:46:33,366 : org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor : INFO --> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' : logTo : 
+2024-12-19 02:46:33,751 : org.springframework.boot.web.embedded.tomcat.TomcatWebServer : INFO --> Tomcat initialized with port 8080 (http) : initialize : 
+2024-12-19 02:46:33,757 : org.apache.catalina.core.StandardService : INFO --> Starting service [Tomcat] : log : 
+2024-12-19 02:46:33,758 : org.apache.catalina.core.StandardEngine : INFO --> Starting Servlet engine: [Apache Tomcat/10.1.33] : log : 
+2024-12-19 02:46:33,775 : org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : INFO --> Initializing Spring embedded WebApplicationContext : log : 
+2024-12-19 02:46:33,775 : org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : INFO --> Root WebApplicationContext: initialization completed in 409 ms : prepareWebApplicationContext : 
+2024-12-19 02:46:33,959 : org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer : INFO --> LiveReload server is running on port 35729 : startServer : 
+2024-12-19 02:46:33,975 : org.springframework.boot.web.embedded.tomcat.TomcatWebServer : INFO --> Tomcat started on port 8080 (http) with context path '/' : start : 
+2024-12-19 02:46:33,978 : org.api.fakestoreapi.FakeStoreApiApplication : INFO --> Started FakeStoreApiApplication in 0.824 seconds (process running for 1.121) : logStarted : 
+2024-12-19 02:46:41,544 : org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : INFO --> Initializing Spring DispatcherServlet 'dispatcherServlet' : log : 
+2024-12-19 02:46:41,544 : org.springframework.web.servlet.DispatcherServlet : INFO --> Initializing Servlet 'dispatcherServlet' : initServletBean : 
+2024-12-19 02:46:41,545 : org.springframework.web.servlet.DispatcherServlet : INFO --> Completed initialization in 1 ms : initServletBean : 
+2024-12-19 02:46:41,594 : org.api.fakestoreapi.controller.ProductControllerV2 : INFO --> New Product Created : createNewProduct : 
+2024-12-19 02:46:41,594 : org.api.fakestoreapi.controller.ProductControllerV2 : INFO --> Info log for testing : createNewProduct : 
+2024-12-19 02:46:41,594 : org.api.fakestoreapi.controller.ProductControllerV2 : ERROR --> Error log for testing : createNewProduct : 
+2024-12-19 02:46:41,594 : org.api.fakestoreapi.controller.ProductControllerV2 : INFO --> This is an info message : createNewProduct : 
+2024-12-19 02:46:44,715 : org.api.fakestoreapi.controller.ProductControllerV2 : INFO --> New Product Created Response : createNewProduct : 
+2024-12-19 02:48:20,933 : org.springframework.boot.web.embedded.tomcat.GracefulShutdown : INFO --> Commencing graceful shutdown. Waiting for active requests to complete : shutDownGracefully : 
+2024-12-19 02:48:20,936 : org.springframework.boot.web.embedded.tomcat.GracefulShutdown : INFO --> Graceful shutdown complete : doShutdown : 
