@@ -2,19 +2,29 @@
 
 we are using the Third party API that is FakeStoreApi.com for more details you can visit documentation.
 
-#### PreRequsites
-
+#### PreRequsites Some of Not Required But better to Know for Easy to understand and implement 
 
 1. Java 1.8
-2. SQL Commands and Querying
-3. SQL Schema Design
-4. SQL Cardinality
-5. LLD (Low-Level Design)
+
+   * Collections
+   * Genrics
+   * OOP's
+   * Stream API
+   * Exception Handling
+   * Date and Time from 1.8v
+   * Comparator and Comparable custom sorting
+   * Lambda Expressions
+2. SQL
+
+   * SQL Schema Design
+   * Commands and Querying
+   * SQL Cardinality
+3. LLD (Low-Level Design)
 
    * Cardinality
    * Design Patterns
    * UML Designs and Class Design
-6. HLD (High-Level Design)
+4. HLD (High-Level Design)
 
    * RDBMS
    * NoSQL Databases
@@ -32,9 +42,16 @@ we are using the Third party API that is FakeStoreApi.com for more details you c
    * API Types
    * Exception Handling
    * Some Hands-on Practice Case Studies
+5. DSA
 
+   * Collection and Map Interfaces
+   * HashMap HashSet InDepth
+   * Algo's (Basic Algo's)
+6. Math
 
-
+   * Probability
+   * Combinations and Permutations
+   * Exponents / Log / BOE /
 
 # Tables
 
