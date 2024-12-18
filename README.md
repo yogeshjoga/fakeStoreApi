@@ -1,9 +1,37 @@
 # This Project for who are very new to REST API's as well as API Integration
 
-we are using the Third party API that is FakeStoreApi.com for more you can visit documentation.
+we are using the Third party API that is FakeStoreApi.com for more details you can visit documentation.
+
+#### PreRequsites
 
 
+1. Java 1.8
+2. SQL Commands and Querying
+3. SQL Schema Design
+4. SQL Cardinality
+5. LLD (Low-Level Design)
 
+   * Cardinality
+   * Design Patterns
+   * UML Designs and Class Design
+6. HLD (High-Level Design)
+
+   * RDBMS
+   * NoSQL Databases
+   * Caching
+   * Messaging Queues (Kafka/Zookeeper)
+   * Load Balancers / Rate Limiters / DNS / API Gateways
+   * Basic Networking (IP, TCP, LAN, WAN, WebSockets, WebHooks)
+   * Sharding Databases / Consistent Hashing
+   * CAP and PACELC Theorem
+   * Master-Slave Architecture
+   * Microservices and Patterns
+   * Latency Chart
+   * HTTP Protocols
+   * HTTP Status Codes
+   * API Types
+   * Exception Handling
+   * Some Hands-on Practice Case Studies
 
 
 
