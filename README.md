@@ -1,9 +1,17 @@
+# Tables
+
+1. Product
+2. Cart
+3. User
+
+These are the 3 tables in FakeStoreAPI,
+
+![image.png](assets/image.png)
+
 # API's What we Developed in this project
 
 1. [GET Product By Id](https://fakestoreapi.com/products/{1}) GET a Single Product
 2. [GET All Products](https://fakestoreapi.com/products) GET all Products
-
-
 
 ## Fake Store API Documentation
 
@@ -17,8 +25,6 @@
 * [Add new product](https://fakestoreapi.com/docs#p-new)
 * [Update a product](https://fakestoreapi.com/docs#p-update)
 * [Delete a product](https://fakestoreapi.com/docs#p-delete)
-
-
 * ### [Cart](https://fakestoreapi.com/docs#cart)
 * [Get all](https://fakestoreapi.com/docs#c-all)
 * [Get a single](https://fakestoreapi.com/docs#c-single)
@@ -29,8 +35,6 @@
 * [Add new cart](https://fakestoreapi.com/docs#c-new)
 * [Update a cart](https://fakestoreapi.com/docs#c-update)
 * [Delete a cart](https://fakestoreapi.com/docs#c-delete)
-
-
 * ### [User](https://fakestoreapi.com/docs#user)
 * [Get all](https://fakestoreapi.com/docs#u-all)
 * [Get a single](https://fakestoreapi.com/docs#u-single)
