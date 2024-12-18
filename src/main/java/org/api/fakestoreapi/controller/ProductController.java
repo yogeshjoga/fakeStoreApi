@@ -112,5 +112,17 @@ public class ProductController {
         // minor bug is there try to find our and fix it later @author yogesh joga
     }
 
+    /**
+     * Retrieves a list of products limited to the specified number.
+     *
+     * @param limit the maximum number of products to return
+     * @return a ResponseEntity containing the list of products and an HTTP status of OK
+     */
+    @GetMapping("/products_by_limit")
+    public ResponseEntity<List<Product>> getProductsByLimit(@RequestParam("limit") Long limit){
+        List<Product> products = productService.getProductsByLimit(limit);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
 
 }

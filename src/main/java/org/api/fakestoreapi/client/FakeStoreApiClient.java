@@ -98,6 +98,25 @@ public class FakeStoreApiClient {
         return dtoValidator(responseEntity);
     }
 
+    /**
+     * Retrieves a list of products from the Fake Store API based on the specified limit.
+     *
+     * This method sends an HTTP GET request to the Fake Store API to fetch the products
+     * constrained by the specified limit. The response is then converted into a list
+     * of FSA_RequestProductDTO objects representing the product details.
+     *
+     * @param limit The maximum number of products to retrieve from the API.
+     * @return A list of FSA_RequestProductDTO objects containing the details of the products.
+     */
+    public List<FSA_RequestProductDTO> getProductsByLimit(Long limit){
+        ResponseEntity<FSA_RequestProductDTO[]> responseEntity = requestForEntity("https://fakestoreapi.com/products?limit={limit}",HttpMethod.GET,null,FSA_RequestProductDTO[].class,limit);
+
+        return Arrays.asList(responseEntity.getBody());
+    }
+
+
+
+
 
 
 }

@@ -19,4 +19,5 @@ public interface IProductService {
     public Product getProductById(Long id) throws ThirdPartyAPIException;
     public List<Product> getAllProducts() throws ThirdPartyAPIException;
     public FSA_RequestProductDTO postProduct(FSA_RequestProductDTO dto) throws ThirdPartyAPIException;
+    public List<Product> getProductsByLimit(Long limit);
 }
