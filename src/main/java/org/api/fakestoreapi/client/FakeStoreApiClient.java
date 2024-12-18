@@ -9,6 +9,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestClientException;
@@ -113,6 +114,27 @@ public class FakeStoreApiClient {
 
         return Arrays.asList(responseEntity.getBody());
     }
+
+
+    /**
+     * Adds a new product by sending a POST request to the Fake Store API.
+     *
+     * This method takes a product object in the form of FSA_RequestProductDTO,
+     * sends it to the external API, and processes the response to validate
+     * the creation of the new product.
+     *
+     * @param dto An instance of FSA_RequestProductDTO containing the product details
+     *            to be added, including attributes such as title, description,
+     *            price, and image.
+     * @return An instance of FSA_RequestProductDTO containing the validated product
+     *         details returned by the API after successful creation.
+     */
+    public FSA_RequestProductDTO addNewProduct(@RequestBody FSA_RequestProductDTO dto){
+        ResponseEntity<FSA_RequestProductDTO> responseEntity = requestForEntity("https://fakestoreapi.com/products",HttpMethod.POST,dto,FSA_RequestProductDTO.class);
+        return dtoValidator(responseEntity);
+    }
+
+
 
 
     public List<FSA_RequestProductDTO> getProductsByLimitAndOffset(Long limit){

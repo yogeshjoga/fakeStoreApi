@@ -105,10 +105,13 @@ public class ProductController {
      * @return A ResponseEntity containing the created FSA_RequestProductDTO object and an HTTP status of OK.
      * @throws ThirdPartyAPIException If there is an error while interacting with the third-party API.
      */
-    @PostMapping("/create_product")
+    @PostMapping("/create_new_product")
     public ResponseEntity<FSA_RequestProductDTO> postProduct(@RequestBody FSA_RequestProductDTO dto) throws ThirdPartyAPIException {
+        headers = new LinkedMultiValueMap<>();
+        headers.add("Date", LocalDateTime.now().toString());
+        headers.add("Api_Version", "1.0");
         FSA_RequestProductDTO response = productService.postProduct(dto);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response,headers, HttpStatus.OK);
         // minor bug is there try to find our and fix it later @author yogesh joga
     }
 
@@ -123,6 +126,8 @@ public class ProductController {
         List<Product> products = productService.getProductsByLimit(limit);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
+
+
 
     @GetMapping("/products_by_limit_and_offset")
     public ResponseEntity<List<Product>> getProductsByLimitAndOffset(@RequestParam("limit") Long limit,@RequestParam("offset") Long offset){
